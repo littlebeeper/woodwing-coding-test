@@ -8,6 +8,7 @@ import java.util.Map;
 import static com.woodwing.codingtest.DistanceCalculatorResource.DISTANCE_CALCULATOR_PATH;
 import static io.restassured.RestAssured.given;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+import static javax.ws.rs.core.MediaType.TEXT_PLAIN;
 import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
@@ -22,18 +23,20 @@ class DistanceCalculatorResourceTest {
                 "length", 3,
                 "unit", "YARD");
 
-        var request = Map.of("distanceA", distanceA,
+        var request = Map.of(
+                "distanceA", distanceA,
                 "distanceB", distanceB,
                 "returnUnit", "METER");
 
         given()
           .when()
-                .accept(APPLICATION_JSON)
+                .accept(TEXT_PLAIN)
                 .contentType(APPLICATION_JSON)
                 .body(request)
                 .post(DISTANCE_CALCULATOR_PATH)
           .then()
-             .statusCode(200)
+                .contentType(TEXT_PLAIN)
+                .statusCode(200)
              .body(is("7.73"));
     }
 

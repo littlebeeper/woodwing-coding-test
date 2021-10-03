@@ -1,22 +1,25 @@
 package com.woodwing.codingtest;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import org.jboss.logging.Logger;
+
+import javax.ws.rs.*;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 import static javax.ws.rs.core.MediaType.TEXT_PLAIN;
 
-@Path(DistanceCalculatorResource.DISTANCE_CALCULATOR_PATH)
+@Path("/")
 public class DistanceCalculatorResource {
 
-    public static final String DISTANCE_CALCULATOR_PATH = "/distance-calculator";
+    private Logger logger = Logger.getLogger(DistanceCalculatorResource.class);
 
-    @GET
-    @Produces(TEXT_PLAIN)
+    public static final String DISTANCE_CALCULATOR_PATH = "distance-calculator/";
+
+    @POST
     @Consumes(APPLICATION_JSON)
-    public String calculate() {
-        return "Hello RESTEasy";
+    @Produces(TEXT_PLAIN)
+    @Path(DISTANCE_CALCULATOR_PATH)
+    public String calculate(CalculationRequest request) {
+        logger.infof("Calculation Request: [%s]", request);
+        return "7.73";
     }
 }
