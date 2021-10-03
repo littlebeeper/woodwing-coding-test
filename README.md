@@ -1,5 +1,15 @@
 # distance-calculator Project
 
+* Handle the distances and return unit as JSON post request
+* The sentence "the requester can specify a unit" means distance types are optional.
+* The sentence "for the returned total distance, the requester must specify a unit" means request parameter total distance unit is mandatory.
+* I can deduct from the given example that the distances are in whole numbers. It needs however clarification. 
+  * I can ask for it later. The aim of this project is to complete it in four hours.
+* The returned total distance type must be decimal number.
+* I'll treat the distances and returned total as Immutable Value Objects, since they are units of data, in the domain layer
+* I'll perform the calculation operation in the service layer that takes a DistanceCalculationRequest
+* If I've some time left I'll write ADRs for why I chose Quarkus for this project
+
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
