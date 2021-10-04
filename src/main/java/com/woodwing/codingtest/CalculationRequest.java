@@ -1,8 +1,10 @@
 package com.woodwing.codingtest;
 
+import com.woodwing.codingtest.domain.Unit;
+
 public class CalculationRequest {
-    public Distance distanceA;
-    public Distance distanceB;
+    public DistanceDTO distanceA;
+    public DistanceDTO distanceB;
     public Unit returnUnit;
 
     @Override

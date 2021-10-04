@@ -37,7 +37,7 @@ class DistanceCalculatorResourceTest {
           .then()
                 .contentType(TEXT_PLAIN)
                 .statusCode(200)
-             .body(is("7.73"));
+             .body(is("7.7432"));
     }
 
 }

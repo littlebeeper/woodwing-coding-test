@@ -1,5 +1,13 @@
 # distance-calculator Project
 
+Make a web service that accepts two distances (numbers) and returns the total distance (sum of both).
+
+This project uses Quarkus, the Supersonic Subatomic Java Framework.
+
+If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+
+## Approach summary
+
 * Handle the distances and return unit as JSON post request
 * The sentence "the requester can specify a unit" means distance types are optional.
 * The sentence "for the returned total distance, the requester must specify a unit" means request parameter total distance unit is mandatory.
@@ -9,10 +17,6 @@
 * I'll treat the distances and returned total as Immutable Value Objects, since they are units of data, in the domain layer
 * I'll perform the calculation operation in the service layer that takes a DistanceCalculationRequest
 * If I've some time left I'll write ADRs for why I chose Quarkus for this project
-
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
-
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
 ## Running the application in dev mode
 
