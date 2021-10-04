@@ -18,6 +18,12 @@ If you want to learn more about Quarkus, please visit its website: https://quark
 * I'll perform the calculation operation in the service layer that takes a DistanceCalculationRequest
 * If I've some time left I'll write ADRs for why I chose Quarkus for this project
 
+## Future improvements
+
+* Parameterize Distance class using generics. For example, `new Distance<Meter>(new BigDecimal("2113"))` 
+* Validate fields of calculation request (`CalculationRequest`) via Bean Validation API
+* Write more tests to cover various edge cases
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
